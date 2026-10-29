@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>REPLACE: Page title</title>
+<meta name="description" content="REPLACE: one-sentence description of the page.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+
+<!-- Optional: load up to two Google Font families, then set them in --font-* below.
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=REPLACE&display=swap" rel="stylesheet">
+-->
+
+<style>
+/* ---------- Tokens: replace every value with your direction's choices ---------- */
+:root {
+  color-scheme: light dark;
+
+  /* color (OKLCH, tinted neutrals, no pure black or white) */
+  --bg:      oklch(97.5% 0.008 85);
+  --surface: oklch(94% 0.01 85);
+  --text:    oklch(24% 0.02 260);
+  --muted:   oklch(46% 0.02 260);
+  --line:    oklch(86% 0.012 85);
+  --accent:  oklch(55% 0.17 35);
+  --on-accent: oklch(98% 0.01 85);
+
+  /* type */
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-body);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --step-2: clamp(1.6rem, 1.35rem + 1.2vw, 2.25rem);
+  --step-3: clamp(2.2rem, 1.6rem + 3vw, 4rem);
+
+  /* space (4px base) */
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 1rem; --s-4: 1.5rem;
+  --s-5: 2.5rem;  --s-6: 4rem;   --s-7: 6rem;
+
+  --radius: 0.5rem;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --measure: 68ch;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: oklch(18% 0.015 260);  --surface: oklch(22% 0.016 260);
+    --text: oklch(92% 0.01 85);  --muted: oklch(72% 0.015 85);
+    --line: oklch(32% 0.016 260); --accent: oklch(72% 0.15 35);
+    --on-accent: oklch(18% 0.015 260);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: oklch(18% 0.015 260);  --surface: oklch(22% 0.016 260);
+  --text: oklch(92% 0.01 85);  --muted: oklch(72% 0.015 85);
+  --line: oklch(32% 0.016 260); --accent: oklch(72% 0.15 35);
+  --on-accent: oklch(18% 0.015 260);
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+:root {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: var(--step-0) / 1.6 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { max-width: 100%; height: auto; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.1; margin: 0 0 var(--s-3); text-wrap: balance; }
+h1 { font-size: var(--step-3); }
+h2 { font-size: var(--step-2); }
+p  { margin: 0 0 var(--s-3); max-width: var(--measure); text-wrap: pretty; }
+a  { color: inherit; text-underline-offset: 0.2em; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.skip-link { position: absolute; left: var(--s-3); top: -4rem; background: var(--text); color: var(--bg);
+  padding: var(--s-2) var(--s-3); border-radius: var(--radius); z-index: 10; }
+.skip-link:focus { top: var(--s-3); }
+
+.wrap { width: min(100% - 2 * var(--s-4), 72rem); margin-inline: auto; }
+section { padding-block: var(--s-6); }
+
+.button { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--s-4);
+  background: var(--accent); color: var(--on-accent); border: 0; border-radius: var(--radius);
+  font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
+  transition: transform 0.2s var(--ease-out), opacity 0.2s var(--ease-out); }
+.button:hover { transform: translateY(-1px); }
+.button:active { transform: translateY(0); opacity: 0.9; }
+
+/* Wrap wide content so the page never scrolls sideways */
+.scroll-x { overflow-x: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="wrap">
+  <nav aria-label="Primary"><!-- REPLACE: brand and navigation --></nav>
+</header>
+
+<main id="main">
+  <section class="wrap" aria-labelledby="hero-title">
+    <h1 id="hero-title">REPLACE: A specific, confident headline</h1>
+    <p>REPLACE: One or two sentences that say exactly what this is and who it's for.</p>
+    <a class="button" href="#contact">REPLACE: Primary action</a>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p id="contact">REPLACE: Contact details and closing line.</p>
+</footer>
+</body>
+</html>
